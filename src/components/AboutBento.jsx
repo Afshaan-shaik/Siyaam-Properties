@@ -265,10 +265,18 @@ END:VCARD`;
               <div className="space-y-2 text-xs text-slate-200 border-t border-white/10 pt-4 font-mono">
                 <div className="flex items-center gap-2">
                   <Phone className="w-3.5 h-3.5 text-gold-400" />
-                  <span>+91 8884969988</span>
+                  <span>+91 96112 63884 (Afshaan Shaikh)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone className="w-3.5 h-3.5 text-slate-400" />
+                  <span>+91 8884969988 (Sameer Shaikh)</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="w-3.5 h-3.5 text-gold-400" />
+                  <span>afshaan100@gmail.com</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail className="w-3.5 h-3.5 text-slate-400" />
                   <span>info@siyaamproperties.in</span>
                 </div>
                 <div className="flex items-start gap-2">

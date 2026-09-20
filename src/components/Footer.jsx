@@ -139,11 +139,17 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-gold-400 flex-shrink-0" />
-                <a href="tel:+918884969988" className="hover:text-white">+91-8884969988</a>
+                <div className="flex flex-col">
+                  <a href="tel:+919611263884" className="hover:text-gold-300 font-medium">+91 96112 63884 (Afshaan Shaikh)</a>
+                  <a href="tel:+918884969988" className="hover:text-slate-200 text-[11px]">+91-8884969988 (Sameer Shaikh)</a>
+                </div>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-gold-400 flex-shrink-0" />
-                <a href="mailto:info@siyaamproperties.in" className="hover:text-white">info@siyaamproperties.in</a>
+                <div className="flex flex-col">
+                  <a href="mailto:afshaan100@gmail.com" className="hover:text-gold-300 font-medium">afshaan100@gmail.com</a>
+                  <a href="mailto:info@siyaamproperties.in" className="hover:text-slate-200 text-[11px]">info@siyaamproperties.in</a>
+                </div>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-gold-400 flex-shrink-0" />
@@ -181,14 +187,14 @@ export default function Footer() {
             © 2025 Siyaam Properties. All rights reserved.
           </div>
           <div>
-            Developed &amp; Maintained by{' '}
+            Designed &amp; Developed by{' '}
             <a 
-              href="https://app.nirmaantech.in/" 
+              href="https://github.com/Afshaan-shaik" 
               target="_blank" 
-              rel="nofollow noreferrer" 
-              className="text-slate-300 hover:text-gold-300 underline"
+              rel="noopener noreferrer" 
+              className="text-gold-400 hover:text-gold-300 font-semibold underline"
             >
-              Nirmaantech.in
+              Afshaan Shaikh
             </a>
           </div>
         </div>

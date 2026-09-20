@@ -67,7 +67,20 @@ export default function MapAndContact() {
               
               <div className="p-4 rounded-2xl bg-slate-950/60 border border-white/10 space-y-1">
                 <div className="flex items-center gap-2 text-gold-400 text-xs font-bold uppercase">
-                  <Phone className="w-4 h-4" /> Direct Phone
+                  <Phone className="w-4 h-4" /> Afshaan Shaikh
+                </div>
+                <a 
+                  href="tel:+919611263884" 
+                  className="text-base font-black text-white hover:text-gold-300 block font-heading"
+                >
+                  +91 96112 63884
+                </a>
+                <span className="text-[11px] text-slate-400 block">Direct Line & Advisory</span>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-slate-950/60 border border-white/10 space-y-1">
+                <div className="flex items-center gap-2 text-gold-400 text-xs font-bold uppercase">
+                  <Phone className="w-4 h-4" /> Sameer Kasim Shaikh
                 </div>
                 <a 
                   href="tel:+918884969988" 
@@ -75,30 +88,32 @@ export default function MapAndContact() {
                 >
                   +91-8884969988
                 </a>
-                <span className="text-[11px] text-slate-400 block">Immediate consultation</span>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-slate-950/60 border border-white/10 space-y-1">
-                <div className="flex items-center gap-2 text-gold-400 text-xs font-bold uppercase">
-                  <Clock className="w-4 h-4" /> Working Hours
-                </div>
-                <div className="text-base font-black text-white font-heading">
-                  10:00 AM – 7:00 PM
-                </div>
-                <span className="text-[11px] text-slate-400 block">Monday to Saturday</span>
+                <span className="text-[11px] text-slate-400 block">Founder & Principal</span>
               </div>
 
               <div className="sm:col-span-2 p-4 rounded-2xl bg-slate-950/60 border border-white/10 space-y-1">
                 <div className="flex items-center gap-2 text-gold-400 text-xs font-bold uppercase">
                   <Mail className="w-4 h-4" /> Email Enquiries
                 </div>
-                <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm font-semibold">
+                <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm font-semibold">
+                  <a href="mailto:afshaan100@gmail.com" className="text-gold-300 hover:text-white underline">
+                    afshaan100@gmail.com
+                  </a>
                   <a href="mailto:info@siyaamproperties.in" className="text-slate-200 hover:text-gold-300 underline">
                     info@siyaamproperties.in
                   </a>
                   <a href="mailto:siyaamproperties@gmail.com" className="text-slate-400 hover:text-gold-300 underline">
                     siyaamproperties@gmail.com
                   </a>
+                </div>
+              </div>
+
+              <div className="sm:col-span-2 p-4 rounded-2xl bg-slate-950/60 border border-white/10 space-y-1">
+                <div className="flex items-center gap-2 text-gold-400 text-xs font-bold uppercase">
+                  <Clock className="w-4 h-4" /> Office Timings
+                </div>
+                <div className="text-sm font-semibold text-white">
+                  10:00 AM – 7:00 PM (Monday to Saturday)
                 </div>
               </div>
 

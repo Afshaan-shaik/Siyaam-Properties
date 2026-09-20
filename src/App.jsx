@@ -51,11 +51,11 @@ export default function App() {
       {/* Floating WhatsApp Quick Connect Button */}
       <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
         <a
-          href="https://wa.me/918884969988?text=Hello%20Siyaam%20Properties,%20I%20am%20interested%20in%20consulting%20for%20property%20investments."
+          href="https://wa.me/919611263884?text=Hello%20Afshaan%20Shaikh,%20I%20am%20interested%20in%20Siyaam%20Properties%20consultation."
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-3 p-3.5 sm:px-4 sm:py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-[0_4px_25px_rgba(16,185,129,0.5)] border border-emerald-400/40 transition-all duration-300 hover:scale-105"
-          title="Chat with Siyaam Properties"
+          title="Chat with Afshaan Shaikh (Siyaam Properties)"
         >
           <MessageSquare className="w-5 h-5 fill-white" />
           <span className="hidden sm:inline-block text-xs font-bold tracking-wide">

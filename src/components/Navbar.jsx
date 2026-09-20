@@ -78,7 +78,7 @@ export default function Navbar({ onOpenContactModal }) {
             </a>
 
             <a
-              href="tel:+918884969988"
+              href="tel:+919611263884"
               className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs xl:text-sm font-semibold tracking-wide text-obsidian-950 bg-gradient-to-r from-gold-300 via-gold-400 to-amber-500 hover:from-gold-200 hover:to-gold-400 shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_28px_rgba(212,175,55,0.5)] transition-all duration-300 transform active:scale-95"
             >
               <Phone className="w-4 h-4" />
@@ -90,7 +90,7 @@ export default function Navbar({ onOpenContactModal }) {
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
             <a
-              href="tel:+918884969988"
+              href="tel:+919611263884"
               className="p-2 rounded-lg bg-gold-400 text-obsidian-950 font-bold"
             >
               <Phone className="w-4 h-4" />
@@ -123,14 +123,14 @@ export default function Navbar({ onOpenContactModal }) {
             ))}
             <div className="pt-3 border-t border-white/10 flex flex-col gap-2">
               <a
-                href="tel:+918884969988"
+                href="tel:+919611263884"
                 className="flex items-center justify-center gap-2 py-3 rounded-xl bg-gold-400 text-obsidian-950 font-bold text-sm"
               >
                 <Phone className="w-4 h-4" />
-                Call +91-8884969988
+                Call +91 96112 63884 (Afshaan Shaikh)
               </a>
               <a
-                href="https://wa.me/918884969988?text=Hello%20Siyaam%20Properties"
+                href="https://wa.me/919611263884?text=Hello%20Afshaan%20Shaikh,%20I%20am%20interested%20in%20Siyaam%20Properties."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-600 text-white font-semibold text-sm"
