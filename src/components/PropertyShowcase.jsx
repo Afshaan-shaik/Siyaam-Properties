@@ -567,9 +567,6 @@ export default function PropertyShowcase() {
                     {authError}
                   </p>
                 )}
-                <div className="mt-2 text-center text-[11px] text-slate-400">
-                  Default Master Key: <span className="text-gold-400 font-mono font-bold">7860</span>
-                </div>
               </div>
 
               <div className="flex gap-2 pt-2">
