@@ -170,3 +170,92 @@ export const propertiesList = [
     badge: "Overseas Tax-Free"
   }
 ];
+
+export const STORAGE_KEY_CUSTOM_PROPERTIES = 'siyaam_custom_properties';
+export const STORAGE_KEY_OWNER_AUTH = 'siyaam_owner_verified';
+
+export const presetLuxuryImages = [
+  {
+    name: "Skyline Luxury Penthouse",
+    url: "/assets/whatsapp-image-2025-12-24-at-00.23.37-2-LnD6KtTmn5SODY2a.jpeg",
+  },
+  {
+    name: "Exclusive Sunset Villa",
+    url: "/assets/whatsapp-image-2025-12-24-at-00.23.37-EM7khvt5Dq1p83i3.jpeg",
+  },
+  {
+    name: "Lakeview Waterfront Estate",
+    url: "/assets/whatsapp-image-2025-12-24-at-00.28.48-d6ZZ6pweqCUr0uIl.jpeg",
+  },
+  {
+    name: "City View Executive Residence",
+    url: "/assets/whatsapp-image-2025-12-24-at-00.32.32-q097dxDiNBjdsWtU.jpeg",
+  }
+];
+
+export const sampleSkylinePenthouse = {
+  title: "Skyline Luxury Penthouse",
+  category: "luxury",
+  tag: "Ultra Prime",
+  price: "₹2.0 Cr",
+  priceNumeric: 20000000,
+  location: "Vidyanagar Central, Hubballi",
+  area: "3,850 sq.ft",
+  bedrooms: 3,
+  bathrooms: 4,
+  type: "Skyline Penthouse",
+  image: "/assets/whatsapp-image-2025-12-24-at-00.23.37-2-LnD6KtTmn5SODY2a.jpeg",
+  description: "3 expansive bedrooms, private rooftop terrace with 360° panoramic city skyline views, private elevator access and Italian marble flooring. Tailored for elevated luxury living.",
+  features: [
+    "Private Rooftop Terrace",
+    "Designer Modular Kitchen",
+    "Smart Home Automation",
+    "Private Elevator Access",
+    "Clubhouse & Gym Access",
+    "Italian Marble Flooring"
+  ],
+  badge: "Immediate Handover"
+};
+
+export function getCustomProperties() {
+  if (typeof window === 'undefined') return [];
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY_CUSTOM_PROPERTIES);
+    return raw ? JSON.parse(raw) : [];
+  } catch (err) {
+    console.error("Failed to read custom properties:", err);
+    return [];
+  }
+}
+
+export function saveCustomProperty(newProperty) {
+  if (typeof window === 'undefined') return [];
+  try {
+    const existing = getCustomProperties();
+    const updated = [newProperty, ...existing];
+    localStorage.setItem(STORAGE_KEY_CUSTOM_PROPERTIES, JSON.stringify(updated));
+    return updated;
+  } catch (err) {
+    console.error("Failed to save custom property:", err);
+    return [];
+  }
+}
+
+export function deleteCustomProperty(propertyId) {
+  if (typeof window === 'undefined') return [];
+  try {
+    const existing = getCustomProperties();
+    const updated = existing.filter((p) => p.id !== propertyId);
+    localStorage.setItem(STORAGE_KEY_CUSTOM_PROPERTIES, JSON.stringify(updated));
+    return updated;
+  } catch (err) {
+    console.error("Failed to delete custom property:", err);
+    return [];
+  }
+}
+
+export function getAllCombinedProperties() {
+  const custom = getCustomProperties();
+  return [...custom, ...propertiesList];
+}
+
