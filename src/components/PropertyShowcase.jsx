@@ -19,7 +19,8 @@ import {
   Trash2,
   KeyRound,
   Shield,
-  Eye
+  Eye,
+  EyeOff
 } from 'lucide-react';
 import { 
   getAllCombinedProperties, 
@@ -42,6 +43,8 @@ export default function PropertyShowcase() {
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [authPin, setAuthPin] = useState('');
   const [authError, setAuthError] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [isReadOnly, setIsReadOnly] = useState(true);
   const [showAddModal, setShowAddModal] = useState(false);
   
   const { isDark } = useTheme();
@@ -62,6 +65,24 @@ export default function PropertyShowcase() {
       }
     }
   }, []);
+
+  // Ensure input field is always completely empty when auth modal opens
+  useEffect(() => {
+    if (showAuthModal) {
+      setAuthPin('');
+      setAuthError('');
+      setShowPassword(false);
+      setIsReadOnly(true);
+    }
+  }, [showAuthModal]);
+
+  const handleOpenAuthModal = () => {
+    setAuthPin('');
+    setAuthError('');
+    setShowPassword(false);
+    setIsReadOnly(true);
+    setShowAuthModal(true);
+  };
 
   // Filter tabs
   const filterTabs = [
@@ -144,7 +165,7 @@ export default function PropertyShowcase() {
             {!isOwnerMode ? (
               <button
                 type="button"
-                onClick={() => setShowAuthModal(true)}
+                onClick={handleOpenAuthModal}
                 className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-300 border ${
                   isDark 
                     ? 'bg-slate-900/90 hover:bg-gold-500/10 text-gold-400 border-gold-500/30 hover:border-gold-400' 
@@ -549,19 +570,45 @@ export default function PropertyShowcase() {
               </p>
             </div>
 
-            <form onSubmit={handleOwnerLogin} className="space-y-4">
+            <form onSubmit={handleOwnerLogin} autoComplete="off" className="space-y-4">
+              {/* Hidden decoy fields to block browser password managers from auto-filling */}
+              <input type="text" name="decoy_username_field" className="hidden" tabIndex="-1" autoComplete="off" />
+              <input type="password" name="decoy_password_field" className="hidden" tabIndex="-1" autoComplete="off" />
+
               <div>
-                <input
-                  type="password"
-                  autoFocus
-                  required
-                  value={authPin}
-                  onChange={(e) => setAuthPin(e.target.value)}
-                  placeholder="Enter Master Passcode..."
-                  className={`w-full px-4 py-3 rounded-xl border text-center text-lg tracking-widest font-mono font-bold focus:outline-none focus:ring-2 focus:ring-gold-400 ${
-                    isDark ? 'bg-slate-950 border-white/15 text-white' : 'bg-white border-slate-300 text-slate-900'
-                  }`}
-                />
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    name={`owner_key_code_${showAuthModal ? 'active' : 'idle'}`}
+                    id="owner_passcode_input"
+                    autoComplete="new-password"
+                    data-lpignore="true"
+                    data-1p-ignore="true"
+                    data-form-type="other"
+                    readOnly={isReadOnly}
+                    onFocus={() => setIsReadOnly(false)}
+                    onClick={() => setIsReadOnly(false)}
+                    required
+                    value={authPin}
+                    onChange={(e) => {
+                      setAuthPin(e.target.value);
+                      if (authError) setAuthError('');
+                    }}
+                    placeholder="Enter Master Passcode..."
+                    className={`w-full px-4 py-3 pr-11 rounded-xl border text-center text-lg tracking-widest font-mono font-bold focus:outline-none focus:ring-2 focus:ring-gold-400 ${
+                      isDark ? 'bg-slate-950 border-white/15 text-white' : 'bg-white border-slate-300 text-slate-900'
+                    }`}
+                  />
+                  <button
+                    type="button"
+                    tabIndex="-1"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-lg text-slate-400 hover:text-white transition-colors"
+                    title={showPassword ? "Hide Passcode" : "Show Passcode"}
+                  >
+                    {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                  </button>
+                </div>
                 {authError && (
                   <p className="text-xs text-red-400 mt-2 text-center font-semibold">
                     {authError}
@@ -572,7 +619,12 @@ export default function PropertyShowcase() {
               <div className="flex gap-2 pt-2">
                 <button
                   type="button"
-                  onClick={() => setShowAuthModal(false)}
+                  onClick={() => {
+                    setShowAuthModal(false);
+                    setAuthPin('');
+                    setAuthError('');
+                    setShowPassword(false);
+                  }}
                   className="w-1/2 py-2.5 rounded-full text-xs font-bold border border-white/15 hover:bg-white/10 transition-colors"
                 >
                   Cancel
