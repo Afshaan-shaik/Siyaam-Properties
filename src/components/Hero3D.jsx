@@ -139,22 +139,9 @@ export default function Hero3D() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
-          {/* Left Column: Big Authentic Logo, Vision & CTAs */}
+          {/* Left Column: Vision, Headline & CTAs */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-7 text-left">
             
-            {/* 🌟 Enhanced Big Authentic Logo Display (Prominent, Unboxed, Authentic Brand Styling) */}
-            <div className="pt-2 pb-1">
-              <img 
-                src="/assets/siyaam-logo.png" 
-                alt="Siyaam Consultants - Real Estate & Properties" 
-                className={`h-24 sm:h-32 md:h-40 lg:h-44 w-auto object-contain max-w-full transition-all duration-300 ${
-                  isDark 
-                    ? 'p-3 rounded-2xl bg-white/95 shadow-[0_0_35px_rgba(255,255,255,0.25)]' 
-                    : 'drop-shadow-md'
-                }`}
-              />
-            </div>
-
             {/* Badge */}
             <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase font-heading ${
               isDark 
