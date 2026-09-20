@@ -10,11 +10,13 @@ import {
   ShieldCheck, 
   BadgeCheck 
 } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 export default function VideoShowcase() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef(null);
+  const { isDark } = useTheme();
 
   const togglePlay = () => {
     if (!videoRef.current) return;
@@ -41,30 +43,54 @@ export default function VideoShowcase() {
   };
 
   return (
-    <section id="video-reel" className="relative py-24 bg-obsidian-900 border-t border-white/10 overflow-hidden">
+    <section 
+      id="video-reel" 
+      className={`relative py-24 border-t overflow-hidden transition-colors duration-300 ${
+        isDark 
+          ? 'bg-obsidian-900 border-white/10 text-white' 
+          : 'bg-slate-100 border-slate-200 text-slate-900'
+      }`}
+    >
       
-      {/* Cinematic Ambilight Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-gradient-to-r from-gold-500/15 via-sky-500/10 to-amber-500/15 rounded-full blur-[160px] pointer-events-none" />
+      {/* Cinematic Ambilight Glow (in dark mode) */}
+      {isDark && (
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-gradient-to-r from-gold-500/15 via-sky-500/10 to-amber-500/15 rounded-full blur-[160px] pointer-events-none" />
+      )}
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-950 border border-gold-500/30 text-xs font-bold text-gold-300 tracking-wider uppercase font-heading">
-            <Film className="w-3.5 h-3.5 text-gold-400" />
+          <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase font-heading ${
+            isDark 
+              ? 'bg-slate-950 border border-gold-500/30 text-gold-300' 
+              : 'bg-black text-white shadow-sm'
+          }`}>
+            <Film className={`w-3.5 h-3.5 ${isDark ? 'text-gold-400' : 'text-amber-400'}`} />
             <span>CINEMATIC EXPERIENCE & CORPORATE REEL</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading tracking-tight">
-            Witness the <span className="text-gradient-gold">Siyaam Standard</span>
+          <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading tracking-tight ${
+            isDark ? 'text-white' : 'text-slate-950'
+          }`}>
+            Witness the{' '}
+            <span className={isDark ? 'text-gradient-gold' : 'text-red-600 underline decoration-black decoration-2 underline-offset-4'}>
+              Siyaam Standard
+            </span>
           </h2>
-          <p className="text-sm sm:text-base text-slate-300">
+          <p className={`text-sm sm:text-base ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
             A visual journey into our layout developments, luxury architectural residences, and transparent client advisory in Hubballi and Dubai.
           </p>
         </div>
 
         {/* Video Theater Frame */}
-        <div className="relative rounded-3xl p-1.5 sm:p-2.5 bg-gradient-to-b from-gold-400/40 via-white/10 to-transparent shadow-2xl shadow-black/80">
-          <div className="relative rounded-[20px] sm:rounded-[22px] overflow-hidden aspect-[16/9] bg-obsidian-950 border border-white/10 group">
+        <div className={`relative rounded-3xl p-1.5 sm:p-2.5 transition-all shadow-2xl ${
+          isDark 
+            ? 'bg-gradient-to-b from-gold-400/40 via-white/10 to-transparent shadow-black/80' 
+            : 'bg-gradient-to-b from-slate-400/40 via-slate-200 to-transparent shadow-slate-400/30'
+        }`}>
+          <div className={`relative rounded-[20px] sm:rounded-[22px] overflow-hidden aspect-[16/9] border group ${
+            isDark ? 'bg-obsidian-950 border-white/10' : 'bg-black border-slate-300'
+          }`}>
             
             <video
               ref={videoRef}
@@ -88,10 +114,18 @@ export default function VideoShowcase() {
                 onClick={togglePlay}
                 className="absolute inset-0 bg-black/40 backdrop-blur-[2px] flex items-center justify-center cursor-pointer transition-opacity"
               >
-                {/* 3D Gold Play Button */}
-                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-gold-300 via-gold-400 to-amber-500 p-0.5 shadow-[0_0_50px_rgba(212,175,55,0.7)] transform group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
-                  <div className="w-full h-full rounded-full bg-obsidian-950/80 flex items-center justify-center">
-                    <Play className="w-8 h-8 sm:w-10 sm:h-10 text-gold-300 fill-gold-300 ml-1" />
+                {/* 3D Play Button */}
+                <div className={`w-20 h-20 sm:w-24 sm:h-24 rounded-full p-0.5 transform group-hover:scale-110 transition-transform duration-300 flex items-center justify-center ${
+                  isDark 
+                    ? 'bg-gradient-to-br from-gold-300 via-gold-400 to-amber-500 shadow-[0_0_50px_rgba(212,175,55,0.7)]' 
+                    : 'bg-white shadow-2xl'
+                }`}>
+                  <div className={`w-full h-full rounded-full flex items-center justify-center ${
+                    isDark ? 'bg-obsidian-950/80' : 'bg-black'
+                  }`}>
+                    <Play className={`w-8 h-8 sm:w-10 sm:h-10 ml-1 ${
+                      isDark ? 'text-gold-300 fill-gold-300' : 'text-white fill-white'
+                    }`} />
                   </div>
                 </div>
               </div>
@@ -100,11 +134,13 @@ export default function VideoShowcase() {
             {/* Top Bar Badges */}
             <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
               <div className="flex items-center gap-2">
-                <span className="px-3 py-1 rounded-full text-xs font-black tracking-wider bg-gold-400 text-obsidian-950 shadow">
+                <span className={`px-3 py-1 rounded-full text-xs font-black tracking-wider shadow ${
+                  isDark ? 'bg-gold-400 text-obsidian-950' : 'bg-white text-black'
+                }`}>
                   SIYAAM CINEMA
                 </span>
                 <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-black/60 backdrop-blur-md text-white border border-white/20">
-                  <BadgeCheck className="w-3.5 h-3.5 text-gold-400" />
+                  <BadgeCheck className={`w-3.5 h-3.5 ${isDark ? 'text-gold-400' : 'text-emerald-400'}`} />
                   Architectural & Site Reel
                 </span>
               </div>
@@ -116,7 +152,9 @@ export default function VideoShowcase() {
               <div className="flex items-center gap-3">
                 <button
                   onClick={togglePlay}
-                  className="p-2.5 rounded-xl bg-white/10 hover:bg-gold-400 hover:text-obsidian-950 text-white backdrop-blur-md transition-colors"
+                  className={`p-2.5 rounded-xl text-white backdrop-blur-md transition-colors ${
+                    isDark ? 'bg-white/10 hover:bg-gold-400 hover:text-obsidian-950' : 'bg-white/20 hover:bg-white hover:text-black'
+                  }`}
                   aria-label={isPlaying ? 'Pause video' : 'Play video'}
                 >
                   {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 fill-white" />}
@@ -151,14 +189,20 @@ export default function VideoShowcase() {
         </div>
 
         {/* Video Note Box */}
-        <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-slate-950/60 border border-white/10 text-xs text-slate-400">
-          <div className="flex items-center gap-2 text-slate-300">
-            <Sparkles className="w-4 h-4 text-gold-400 flex-shrink-0" />
+        <div className={`mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl border text-xs transition-colors ${
+          isDark 
+            ? 'bg-slate-950/60 border-white/10 text-slate-400' 
+            : 'bg-white border-slate-200 text-slate-700 shadow-sm'
+        }`}>
+          <div className="flex items-center gap-2">
+            <Sparkles className={`w-4 h-4 flex-shrink-0 ${isDark ? 'text-gold-400' : 'text-amber-500'}`} />
             <span>Dedicated video player ready for Siyaam Properties' upcoming official video featurette.</span>
           </div>
           <a
             href="tel:+918884969988"
-            className="font-bold text-gold-400 hover:text-gold-300 whitespace-nowrap"
+            className={`font-bold whitespace-nowrap ${
+              isDark ? 'text-gold-400 hover:text-gold-300' : 'text-slate-900 hover:text-black underline'
+            }`}
           >
             Request Private Site Walkthrough →
           </a>

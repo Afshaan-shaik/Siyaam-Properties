@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { ThemeProvider, useTheme } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero3D from './components/Hero3D';
 import MarketPriceTracker from './components/MarketPriceTracker';
@@ -9,11 +10,17 @@ import AboutBento from './components/AboutBento';
 import DubaiOverseas from './components/DubaiOverseas';
 import MapAndContact from './components/MapAndContact';
 import Footer from './components/Footer';
-import { MessageSquare, PhoneCall } from 'lucide-react';
+import { MessageSquare } from 'lucide-react';
 
-export default function App() {
+function AppContent() {
+  const { isDark } = useTheme();
+
   return (
-    <div className="min-h-screen bg-obsidian-950 text-slate-100 selection:bg-gold-500/30 selection:text-gold-200">
+    <div className={`min-h-screen transition-colors duration-300 ${
+      isDark 
+        ? 'bg-obsidian-950 text-slate-100 selection:bg-gold-500/30 selection:text-gold-200' 
+        : 'bg-white text-slate-900 selection:bg-black selection:text-white'
+    }`}>
       
       {/* Navigation */}
       <Navbar />
@@ -66,5 +73,13 @@ export default function App() {
       </div>
 
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 }
