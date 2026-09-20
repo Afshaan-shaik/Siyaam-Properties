@@ -51,14 +51,14 @@ export default function Footer() {
 
           <div className="flex items-center gap-3">
             <a
-              href="tel:+919611263884"
+              href="tel:+918884969988"
               className={`px-6 py-2.5 rounded-full font-bold transition-all shadow-lg text-xs sm:text-sm ${
                 isDark 
                   ? 'bg-gold-400 hover:bg-gold-300 text-obsidian-950' 
                   : 'bg-white hover:bg-slate-100 text-black'
               }`}
             >
-              Call +91 96112 63884
+              Call +91 8884969988
             </a>
             <button
               onClick={scrollToTop}
