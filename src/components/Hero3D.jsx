@@ -308,7 +308,7 @@ export default function Hero3D() {
                 {/* Card CTA */}
                 <div className="flex items-center justify-between gap-3">
                   <a
-                    href="tel:+919611263884"
+                    href="tel:+918884969988"
                     className={`flex-1 py-2.5 rounded-full text-xs font-bold text-center transition-all ${
                       isDark
                         ? 'bg-white/10 hover:bg-gold-400 hover:text-obsidian-950 text-white border border-white/15'

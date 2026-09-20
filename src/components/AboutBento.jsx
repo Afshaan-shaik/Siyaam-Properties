@@ -147,12 +147,12 @@ END:VCARD`;
                 “We carefully guide your investments, turning property into generational wealth.”
               </div>
               <a
-                href="tel:+919611263884"
+                href="tel:+918884969988"
                 className={`inline-flex items-center gap-2 text-xs font-bold ${
                   isDark ? 'text-gold-400 hover:text-gold-300' : 'text-slate-950 hover:text-red-600'
                 }`}
               >
-                <Phone className="w-3.5 h-3.5" /> Speak with Afshaan Shaikh →
+                <Phone className="w-3.5 h-3.5" /> Speak with Sameer Kasim Shaikh →
               </a>
             </div>
           </div>
@@ -308,11 +308,11 @@ END:VCARD`;
               <div className="space-y-2 text-xs text-slate-800 border-t border-slate-200 pt-4 font-mono">
                 <div className="flex items-center gap-2">
                   <Phone className="w-3.5 h-3.5 text-red-600" />
-                  <span className="font-bold">+91 96112 63884 (Afshaan Shaikh)</span>
+                  <span className="font-bold">+91 8884969988 (Sameer Kasim Shaikh)</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="w-3.5 h-3.5 text-slate-500" />
-                  <span>+91 8884969988 (Sameer Shaikh)</span>
+                  <span>+91 96112 63884 (Afshaan Shaikh • Advisory)</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="w-3.5 h-3.5 text-red-600" />
@@ -385,7 +385,7 @@ END:VCARD`;
             </div>
 
             <a
-              href="https://wa.me/919611263884?text=Hello%20Afshaan%20Shaikh,%20please%20send%20me%20the%20official%20portfolio%20brochure%20PDF."
+              href="https://wa.me/918884969988?text=Hello%20Sameer%20Kasim%20Shaikh,%20please%20send%20me%20the%20official%20portfolio%20brochure%20PDF."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-3.5 rounded-full bg-black hover:bg-slate-800 text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors shadow-md"

@@ -57,7 +57,7 @@ export default function MobileBottomNav() {
       label: 'WhatsApp',
       icon: MessageSquare,
       isAction: true,
-      href: 'https://wa.me/919611263884?text=Hello%20Afshaan%20Shaikh,%20I%20am%20interested%20in%20Siyaam%20Properties%20consultation.',
+      href: 'https://wa.me/918884969988?text=Hello%20Sameer%20Kasim%20Shaikh,%20I%20am%20interested%20in%20Siyaam%20Properties%20consultation.',
       external: true,
       badge: 'Chat',
     },
@@ -66,7 +66,7 @@ export default function MobileBottomNav() {
       label: 'Call',
       icon: PhoneCall,
       isAction: true,
-      href: 'tel:+919611263884',
+      href: 'tel:+918884969988',
       badge: 'Direct',
     },
   ];

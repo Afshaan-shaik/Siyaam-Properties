@@ -396,7 +396,7 @@ export default function InvestmentTracker() {
                   <span className="text-emerald-500 font-bold">Ready to invest?</span> We curate pre-negotiated deals matching your exact target budget.
                 </div>
                 <a
-                  href={`https://wa.me/919611263884?text=Hello%20Afshaan%20Shaikh,%20I%20used%20the%20Investment%20Tracker%20for%20a%20budget%20of%20${formatCurrency(investmentAmount)}%20over%20${years}%20years.%20Please%20share%20verified%20options.`}
+                  href={`https://wa.me/918884969988?text=Hello%20Sameer%20Kasim%20Shaikh,%20I%20used%20the%20Investment%20Tracker%20for%20a%20budget%20of%20${formatCurrency(investmentAmount)}%20over%20${years}%20years.%20Please%20share%20verified%20options.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full font-bold text-xs transition-all shadow-md ${

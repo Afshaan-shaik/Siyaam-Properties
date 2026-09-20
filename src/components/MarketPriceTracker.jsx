@@ -181,7 +181,7 @@ export default function MarketPriceTracker() {
                 {formatLakhsCr(calculatedEstimatedCost)}
               </span>
               <a
-                href={`https://wa.me/919611263884?text=Hello%20Afshaan%20Shaikh,%20I%20am%20looking%20for%20a%20${calcSqFt}%20sq.ft%20property%20in%20${activeMarket.name}.%20Estimated%20budget%20is%20${formatLakhsCr(calculatedEstimatedCost)}.`}
+                href={`https://wa.me/918884969988?text=Hello%20Sameer%20Kasim%20Shaikh,%20I%20am%20looking%20for%20a%20${calcSqFt}%20sq.ft%20property%20in%20${activeMarket.name}.%20Estimated%20budget%20is%20${formatLakhsCr(calculatedEstimatedCost)}.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-500 hover:text-emerald-400 mt-1"

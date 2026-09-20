@@ -100,7 +100,7 @@ export default function Navbar() {
 
             {/* Connect Today Button - Matches User Screenshot */}
             <a
-              href="tel:+919611263884"
+              href="tel:+918884969988"
               className={`px-6 py-2.5 rounded-full text-xs md:text-sm font-bold tracking-wide transition-all duration-300 shadow-lg ${
                 isDark
                   ? 'bg-gradient-to-r from-gold-300 via-gold-400 to-amber-500 text-obsidian-950 hover:from-gold-200 hover:to-gold-400 shadow-[0_0_20px_rgba(212,175,55,0.35)]'
@@ -124,7 +124,7 @@ export default function Navbar() {
             </button>
 
             <a
-              href="tel:+919611263884"
+              href="tel:+918884969988"
               className={`px-3 py-1.5 rounded-full text-xs font-bold ${
                 isDark ? 'bg-gold-400 text-obsidian-950' : 'bg-black text-white'
               }`}
@@ -171,16 +171,16 @@ export default function Navbar() {
 
             <div className="pt-3 border-t border-slate-200/20 flex flex-col gap-2">
               <a
-                href="tel:+919611263884"
+                href="tel:+918884969988"
                 className={`flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm shadow-md ${
                   isDark ? 'bg-gold-400 text-obsidian-950' : 'bg-black text-white'
                 }`}
               >
                 <Phone className="w-4 h-4" />
-                Call +91 96112 63884 (Afshaan Shaikh)
+                Call +91 8884969988 (Sameer Kasim Shaikh)
               </a>
               <a
-                href="https://wa.me/919611263884?text=Hello%20Afshaan%20Shaikh,%20I%20am%20interested%20in%20Siyaam%20Properties."
+                href="https://wa.me/918884969988?text=Hello%20Sameer%20Kasim%20Shaikh,%20I%20am%20interested%20in%20Siyaam%20Properties."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-600 text-white font-semibold text-sm"

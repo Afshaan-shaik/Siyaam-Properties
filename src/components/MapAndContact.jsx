@@ -32,7 +32,7 @@ export default function MapAndContact() {
     const text = encodeURIComponent(
       `*New Inquiry from Siyaam Website*\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nInterest: ${formData.propertyType}\nBudget: ${formData.budget}\nMessage: ${formData.message}`
     );
-    window.open(`https://wa.me/919611263884?text=${text}`, '_blank');
+    window.open(`https://wa.me/918884969988?text=${text}`, '_blank');
   };
 
   const googleMapsDirectionsUrl = "https://www.google.com/maps/dir/?api=1&destination=Dream+Plaza+Keshwapur+Hubballi";
@@ -43,73 +43,40 @@ export default function MapAndContact() {
       className={`relative py-24 border-t overflow-hidden transition-colors duration-300 ${
         isDark 
           ? 'bg-obsidian-900 border-white/10 text-white' 
-          : 'bg-slate-50 border-slate-200 text-slate-900'
+          : 'bg-white border-slate-200 text-slate-900'
       }`}
     >
-      
-      {/* Background glow in dark mode */}
-      {isDark && (
-        <div className="absolute top-1/2 right-10 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl pointer-events-none" />
-      )}
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-          <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase font-heading ${
-            isDark 
-              ? 'bg-slate-950 border border-gold-500/30 text-gold-300' 
-              : 'bg-black text-white shadow-sm'
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider ${
+            isDark ? 'bg-gold-500/10 text-gold-300 border border-gold-500/30' : 'bg-red-50 text-red-600 border border-red-200'
           }`}>
-            <MapPin className={`w-3.5 h-3.5 ${isDark ? 'text-gold-400' : 'text-amber-400'}`} />
-            <span>VISIT OUR HUBLI HEADQUARTERS</span>
+            <MapPin className="w-3.5 h-3.5" /> Direct Advisory Hub
           </div>
+          
           <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading tracking-tight ${
             isDark ? 'text-white' : 'text-slate-950'
           }`}>
-            Connect with{' '}
-            <span className={isDark ? 'text-gradient-gold' : 'text-red-600 underline decoration-black decoration-2 underline-offset-4'}>
-              Siyaam Properties
-            </span>
+            Connect with Siyaam Properties
           </h2>
-          <p className={`text-sm sm:text-base ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
-            Visit our office at Dream Plaza, Keshwapur or schedule a personalized on-site consultation.
+          
+          <p className={`text-base ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+            Visit our corporate headquarters at Dream Plaza or connect directly with our consultants for priority site inspections.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* Contact Details & Form (6 cols) */}
-          <div className={`lg:col-span-6 rounded-3xl p-6 sm:p-8 border flex flex-col justify-between space-y-8 transition-all duration-300 ${
-            isDark 
-              ? 'glass-card border-white/10' 
-              : 'bg-white border-slate-200 shadow-xl'
-          }`}>
+          {/* Left Column: Direct Phone Cards & Email */}
+          <div className="lg:col-span-5 space-y-6">
             
-            {/* Contact Details Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               
+              {/* Primary Contact: Sameer Kasim Shaikh */}
               <div className={`p-4 rounded-2xl border space-y-1 transition-colors ${
-                isDark ? 'bg-slate-950/60 border-white/10' : 'bg-slate-50 border-slate-200 shadow-sm'
-              }`}>
-                <div className={`flex items-center gap-2 text-xs font-bold uppercase ${
-                  isDark ? 'text-gold-400' : 'text-red-600'
-                }`}>
-                  <Phone className="w-4 h-4" /> Afshaan Shaikh
-                </div>
-                <a 
-                  href="tel:+919611263884" 
-                  className={`text-base font-black block font-heading ${
-                    isDark ? 'text-white hover:text-gold-300' : 'text-slate-950 hover:text-red-600'
-                  }`}
-                >
-                  +91 96112 63884
-                </a>
-                <span className="text-[11px] text-slate-500 block">Direct Line & Advisory</span>
-              </div>
-
-              <div className={`p-4 rounded-2xl border space-y-1 transition-colors ${
-                isDark ? 'bg-slate-950/60 border-white/10' : 'bg-slate-50 border-slate-200 shadow-sm'
+                isDark ? 'bg-slate-950/60 border-gold-500/30' : 'bg-slate-50 border-red-200 shadow-sm'
               }`}>
                 <div className={`flex items-center gap-2 text-xs font-bold uppercase ${
                   isDark ? 'text-gold-400' : 'text-red-600'
@@ -124,7 +91,27 @@ export default function MapAndContact() {
                 >
                   +91-8884969988
                 </a>
-                <span className="text-[11px] text-slate-500 block">Founder & Principal</span>
+                <span className="text-[11px] text-emerald-500 font-semibold block">Primary • Site Inspections & Founder</span>
+              </div>
+
+              {/* Secondary Contact: Afshaan Shaikh */}
+              <div className={`p-4 rounded-2xl border space-y-1 transition-colors ${
+                isDark ? 'bg-slate-950/60 border-white/10' : 'bg-slate-50 border-slate-200 shadow-sm'
+              }`}>
+                <div className={`flex items-center gap-2 text-xs font-bold uppercase ${
+                  isDark ? 'text-slate-400' : 'text-slate-600'
+                }`}>
+                  <Phone className="w-4 h-4" /> Afshaan Shaikh
+                </div>
+                <a 
+                  href="tel:+919611263884" 
+                  className={`text-base font-black block font-heading ${
+                    isDark ? 'text-white hover:text-gold-300' : 'text-slate-950 hover:text-red-600'
+                  }`}
+                >
+                  +91 96112 63884
+                </a>
+                <span className="text-[11px] text-slate-500 block">Secondary • Direct Line & Advisory</span>
               </div>
 
               <div className={`sm:col-span-2 p-4 rounded-2xl border space-y-1 transition-colors ${

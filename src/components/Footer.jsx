@@ -157,8 +157,8 @@ export default function Footer() {
               <div className="flex items-center gap-2">
                 <Phone className={`w-4 h-4 flex-shrink-0 ${isDark ? 'text-gold-400' : 'text-amber-400'}`} />
                 <div className="flex flex-col">
-                  <a href="tel:+919611263884" className="hover:text-white font-semibold">+91 96112 63884 (Afshaan Shaikh)</a>
-                  <a href="tel:+918884969988" className="hover:text-slate-400 text-[11px]">+91-8884969988 (Sameer Shaikh)</a>
+                  <a href="tel:+918884969988" className="hover:text-white font-semibold">+91 8884969988 (Sameer Kasim Shaikh)</a>
+                  <a href="tel:+919611263884" className="hover:text-slate-400 text-[11px]">+91 96112 63884 (Afshaan Shaikh • Advisory)</a>
                 </div>
               </div>
               <div className="flex items-center gap-2">

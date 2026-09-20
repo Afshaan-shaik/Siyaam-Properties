@@ -195,7 +195,7 @@ export default function PropertyShowcase() {
                   View Details & Specs
                 </button>
                 <a
-                  href={`https://wa.me/919611263884?text=Hello%20Afshaan%20Shaikh,%20I%20am%20interested%20in%20${encodeURIComponent(property.title)}%20(${property.price}).`}
+                  href={`https://wa.me/918884969988?text=Hello%20Sameer%20Kasim%20Shaikh,%20I%20am%20interested%20in%20${encodeURIComponent(property.title)}%20(${property.price}).`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2.5 rounded-full bg-emerald-600 text-white hover:bg-emerald-500 transition-colors shadow-md"
@@ -208,94 +208,97 @@ export default function PropertyShowcase() {
             </div>
           ))}
         </div>
-
       </div>
 
       {/* Property Details Modal */}
       {selectedProperty && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className={`rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border p-6 sm:p-8 relative animate-in fade-in zoom-in-95 duration-200 ${
-            isDark ? 'glass-card border-white/20' : 'bg-white border-slate-200 shadow-2xl text-slate-900'
+          <div className={`relative rounded-3xl max-w-2xl w-full border overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 ${
+            isDark ? 'bg-obsidian-900 border-white/10 text-white' : 'bg-white border-slate-200 text-slate-950'
           }`}>
-            
-            {/* Close button */}
             <button
               onClick={() => setSelectedProperty(null)}
-              className="absolute top-5 right-5 p-2 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:text-white"
+              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/60 hover:bg-black text-white transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
 
-            {/* Modal Image */}
-            <div className="rounded-2xl overflow-hidden aspect-[16/9] mb-6 border border-slate-200/20 relative">
-              <img
-                src={selectedProperty.image}
+            {/* Modal Image Header */}
+            <div className="relative h-64 sm:h-72 w-full overflow-hidden">
+              <img 
+                src={selectedProperty.image} 
                 alt={selectedProperty.title}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute top-3 left-3 flex gap-2">
-                <span className="px-3 py-1 rounded-full text-xs font-bold bg-gold-400 text-obsidian-950">
-                  {selectedProperty.tag}
-                </span>
-                <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-black/80 text-emerald-400 border border-emerald-500/30">
-                  {selectedProperty.badge}
-                </span>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <div className="absolute bottom-4 left-6 right-6 flex items-end justify-between">
+                <div>
+                  <span className={`text-xs px-3 py-1 rounded-full font-bold uppercase ${
+                    isDark ? 'bg-gold-500/20 text-gold-300 border border-gold-500/30' : 'bg-red-50 text-red-600 border border-red-200'
+                  }`}>
+                    {selectedProperty.tag}
+                  </span>
+                  <h3 className="text-2xl font-bold font-heading text-white mt-2 drop-shadow-md">
+                    {selectedProperty.title}
+                  </h3>
+                  <div className="flex items-center gap-1.5 text-xs text-slate-300 mt-1">
+                    <MapPin className="w-3.5 h-3.5 text-gold-400" />
+                    <span>{selectedProperty.location}</span>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <div className="text-xs text-slate-300">Offer Price</div>
+                  <div className={`text-2xl font-black font-heading ${isDark ? 'text-gold-400' : 'text-red-500'}`}>
+                    {selectedProperty.price}
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="space-y-4">
-              <div className="flex flex-wrap items-start justify-between gap-4">
-                <div>
-                  <div className="flex items-center gap-1.5 text-xs text-slate-400 mb-1">
-                    <MapPin className="w-4 h-4 text-gold-500" />
-                    <span>{selectedProperty.location}</span>
-                  </div>
-                  <h3 className={`text-2xl font-bold font-heading ${isDark ? 'text-white' : 'text-slate-950'}`}>
-                    {selectedProperty.title}
-                  </h3>
-                </div>
-                <div className="text-right">
-                  <span className="text-xs text-slate-400 block">Offer Price</span>
-                  <span className={`text-2xl font-black font-heading ${isDark ? 'text-gold-300' : 'text-red-600'}`}>
-                    {selectedProperty.price}
-                  </span>
-                </div>
-              </div>
-
-              <p className={`text-sm leading-relaxed border-t pt-4 ${isDark ? 'border-white/10 text-slate-300' : 'border-slate-200 text-slate-700'}`}>
+            {/* Modal Body */}
+            <div className="p-6 sm:p-8 space-y-6 max-h-[50vh] overflow-y-auto">
+              <p className={`text-sm leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
                 {selectedProperty.description}
               </p>
 
-              {/* Spec details */}
-              <div className={`grid grid-cols-2 sm:grid-cols-4 gap-3 py-3 border-y rounded-2xl text-center ${
-                isDark ? 'border-white/10 bg-slate-950/40' : 'border-slate-100 bg-slate-50'
-              }`}>
-                <div>
-                  <span className="text-[11px] text-slate-400 block uppercase font-medium">Area</span>
-                  <span className={`text-sm font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>{selectedProperty.area}</span>
+              {/* Spec Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div className={`p-3 rounded-2xl border text-center ${
+                  isDark ? 'bg-slate-950/60 border-white/10' : 'bg-slate-50 border-slate-200'
+                }`}>
+                  <div className="text-[10px] text-slate-400 uppercase tracking-wider">Area</div>
+                  <div className="font-bold text-sm mt-1">{selectedProperty.area}</div>
                 </div>
-                <div>
-                  <span className="text-[11px] text-slate-400 block uppercase font-medium">Type</span>
-                  <span className={`text-sm font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>{selectedProperty.type}</span>
+                <div className={`p-3 rounded-2xl border text-center ${
+                  isDark ? 'bg-slate-950/60 border-white/10' : 'bg-slate-50 border-slate-200'
+                }`}>
+                  <div className="text-[10px] text-slate-400 uppercase tracking-wider">Type</div>
+                  <div className="font-bold text-sm mt-1">{selectedProperty.type}</div>
                 </div>
-                <div>
-                  <span className="text-[11px] text-slate-400 block uppercase font-medium">Bedrooms</span>
-                  <span className={`text-sm font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>{selectedProperty.bedrooms > 0 ? selectedProperty.bedrooms : 'Commercial'}</span>
+                <div className={`p-3 rounded-2xl border text-center ${
+                  isDark ? 'bg-slate-950/60 border-white/10' : 'bg-slate-50 border-slate-200'
+                }`}>
+                  <div className="text-[10px] text-slate-400 uppercase tracking-wider">Bedrooms</div>
+                  <div className="font-bold text-sm mt-1">{selectedProperty.bedrooms > 0 ? selectedProperty.bedrooms : 'Plot / Open'}</div>
                 </div>
-                <div>
-                  <span className="text-[11px] text-slate-400 block uppercase font-medium">Verification</span>
-                  <span className="text-sm font-bold text-emerald-500">100% Clear</span>
+                <div className={`p-3 rounded-2xl border text-center ${
+                  isDark ? 'bg-slate-950/60 border-white/10' : 'bg-slate-50 border-slate-200'
+                }`}>
+                  <div className="text-[10px] text-slate-400 uppercase tracking-wider">Verification</div>
+                  <div className="font-bold text-sm text-emerald-500 mt-1">100% Clear</div>
                 </div>
               </div>
 
-              {/* All Amenities */}
-              <div>
-                <h4 className="text-xs font-bold uppercase text-slate-400 mb-2">Amenities & Specifications</h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {selectedProperty.features.map((feat, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-xs">
-                      <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-                      <span className={isDark ? 'text-slate-200' : 'text-slate-800'}>{feat}</span>
+              {/* Features List */}
+              <div className="space-y-2">
+                <div className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                  Amenities & Specifications
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                  {selectedProperty.features.map((feat, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                      <span>{feat}</span>
                     </div>
                   ))}
                 </div>
@@ -304,16 +307,16 @@ export default function PropertyShowcase() {
               {/* Modal CTAs */}
               <div className="pt-4 flex flex-col sm:flex-row items-center gap-3">
                 <a
-                  href="tel:+919611263884"
+                  href="tel:+918884969988"
                   className={`w-full sm:w-1/2 flex items-center justify-center gap-2 py-3 rounded-full font-bold text-sm transition-colors ${
                     isDark ? 'bg-gold-400 hover:bg-gold-300 text-obsidian-950' : 'bg-black hover:bg-slate-800 text-white'
                   }`}
                 >
                   <Phone className="w-4 h-4" />
-                  <span>Call +91 96112 63884</span>
+                  <span>Call +91 8884969988</span>
                 </a>
                 <a
-                  href={`https://wa.me/919611263884?text=Hello%20Afshaan%20Shaikh,%20I%20would%20like%20to%20schedule%20a%20site%20visit%20for%20${encodeURIComponent(selectedProperty.title)}.`}
+                  href={`https://wa.me/918884969988?text=Hello%20Sameer%20Kasim%20Shaikh,%20I%20would%20like%20to%20schedule%20a%20site%20visit%20for%20${encodeURIComponent(selectedProperty.title)}.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-1/2 flex items-center justify-center gap-2 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-colors"

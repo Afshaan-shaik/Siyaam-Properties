@@ -113,7 +113,7 @@ export default function DubaiOverseas() {
 
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <a
-                href="https://wa.me/919611263884?text=Hello%20Afshaan%20Shaikh,%20I%20am%20interested%20in%20tax-free%20Dubai%20property%20investments%20with%20Amniyat."
+                href="https://wa.me/918884969988?text=Hello%20Sameer%20Kasim%20Shaikh,%20I%20am%20interested%20in%20tax-free%20Dubai%20property%20investments%20with%20Amniyat."
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-xs shadow-lg transition-colors ${

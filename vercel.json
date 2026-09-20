@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/emarat-preview.html",
+      "destination": "/emarat-preview.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
