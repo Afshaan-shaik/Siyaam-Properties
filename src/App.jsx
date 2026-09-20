@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import MobileBottomNav from './components/MobileBottomNav';
@@ -11,10 +11,9 @@ import AboutBento from './components/AboutBento';
 import DubaiOverseas from './components/DubaiOverseas';
 import MapAndContact from './components/MapAndContact';
 import Footer from './components/Footer';
-import IntelligencePlatform from './components/intelligence/IntelligencePlatform';
-import { MessageSquare, Sparkles } from 'lucide-react';
+import { MessageSquare } from 'lucide-react';
 
-function AppContent({ onOpenIntelligence }) {
+function AppContent() {
   const { isDark } = useTheme();
 
   return (
@@ -57,20 +56,6 @@ function AppContent({ onOpenIntelligence }) {
       {/* Footer */}
       <Footer />
 
-      {/* Lab Preview Button for 15 Intelligent Components */}
-      {onOpenIntelligence && (
-        <div className="fixed bottom-20 left-4 z-40 lg:bottom-6 lg:left-6">
-          <button
-            onClick={onOpenIntelligence}
-            className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-gradient-to-r from-obsidian-900 to-obsidian-850 text-gold-400 hover:text-gold-300 border border-gold-500/50 shadow-2xl backdrop-blur-md text-xs font-mono font-bold transition-all hover:scale-105"
-            title="Open the standalone 15-Component Intelligence Preview"
-          >
-            <Sparkles className="w-3.5 h-3.5 text-gold-400 animate-spin" />
-            <span>15-Component Preview</span>
-          </button>
-        </div>
-      )}
-
       {/* Desktop Floating WhatsApp Quick Connect Button */}
       <div className="hidden lg:flex fixed bottom-6 right-6 z-40 flex-col gap-3">
         <a
@@ -96,65 +81,9 @@ function AppContent({ onOpenIntelligence }) {
 }
 
 export default function App() {
-  const [currentRoute, setCurrentRoute] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const path = window.location.pathname;
-      const search = window.location.search;
-      const hash = window.location.hash;
-      if (
-        path.startsWith('/intelligence') || 
-        search.includes('view=intelligence') || 
-        hash === '#intelligence'
-      ) {
-        return 'intelligence';
-      }
-    }
-    return 'home';
-  });
-
-  useEffect(() => {
-    const handlePopState = () => {
-      const path = window.location.pathname;
-      const search = window.location.search;
-      const hash = window.location.hash;
-      if (
-        path.startsWith('/intelligence') || 
-        search.includes('view=intelligence') || 
-        hash === '#intelligence'
-      ) {
-        setCurrentRoute('intelligence');
-      } else {
-        setCurrentRoute('home');
-      }
-    };
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
-
-  const navigateToHome = () => {
-    window.history.pushState({}, '', '/');
-    setCurrentRoute('home');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const navigateToIntelligence = () => {
-    window.history.pushState({}, '', '/intelligence');
-    setCurrentRoute('intelligence');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  if (currentRoute === 'intelligence') {
-    return (
-      <ThemeProvider>
-        <IntelligencePlatform onReturnHome={navigateToHome} />
-      </ThemeProvider>
-    );
-  }
-
   return (
     <ThemeProvider>
-      <AppContent onOpenIntelligence={navigateToIntelligence} />
+      <AppContent />
     </ThemeProvider>
   );
 }
-

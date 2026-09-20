@@ -297,7 +297,7 @@ export default function PropertyShowcase() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                   {selectedProperty.features.map((feat, i) => (
                     <div key={i} className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0" />
                       <span>{feat}</span>
                     </div>
                   ))}
