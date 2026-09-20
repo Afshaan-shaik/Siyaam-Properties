@@ -79,8 +79,8 @@ export default function MarketPriceTracker() {
             </p>
           </div>
 
-          {/* Quick Filter Tabs */}
-          <div className="flex flex-wrap gap-2">
+          {/* Quick Filter Tabs (Swipeable on Mobile like Native App Chips) */}
+          <div className="flex overflow-x-auto pb-2 sm:pb-0 scrollbar-none sm:flex-wrap gap-2 w-full">
             {[
               { id: 'all', label: 'All Localities' },
               { id: 'commercial', label: 'Commercial Hubs' },
@@ -91,7 +91,7 @@ export default function MarketPriceTracker() {
               <button
                 key={tab.id}
                 onClick={() => setSelectedCategory(tab.id)}
-                className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
+                className={`px-4 py-2.5 rounded-full text-xs font-bold transition-all whitespace-nowrap flex-shrink-0 active:scale-95 ${
                   selectedCategory === tab.id
                     ? isDark 
                       ? 'bg-gold-400 text-obsidian-950 shadow-md' 

@@ -1,0 +1,18 @@
+{
+  "short_name": "Siyaam",
+  "name": "Siyaam Properties - Real Estate Consultancy",
+  "description": "Hubballi-Dharwad's Premier Real Estate Consultancy & Dubai Property Investments",
+  "icons": [
+    {
+      "src": "/assets/siyaam-logo.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#020617",
+  "display": "standalone",
+  "orientation": "portrait"
+}

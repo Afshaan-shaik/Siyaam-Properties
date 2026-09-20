@@ -171,11 +171,11 @@ export default function Hero3D() {
               We deal in residential plots, NA KJP layout developments, flats, villas, commercial spaces, and tax-free Dubai properties with 100% legal transparency.
             </p>
 
-            {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-1">
+            {/* Action Buttons (Enlarged Mobile App Touch Targets) */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-1">
               <a
                 href="#properties"
-                className={`group inline-flex items-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm tracking-wide transition-all duration-300 transform active:scale-95 ${
+                className={`group inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 sm:py-4 rounded-full font-bold text-sm tracking-wide transition-all duration-300 transform active:scale-95 shadow-lg ${
                   isDark
                     ? 'bg-gradient-to-r from-gold-300 via-gold-400 to-amber-500 text-obsidian-950 shadow-[0_0_25px_rgba(212,175,55,0.35)] hover:shadow-[0_0_35px_rgba(212,175,55,0.6)]'
                     : 'bg-black text-white hover:bg-slate-800 shadow-xl'
@@ -187,7 +187,7 @@ export default function Hero3D() {
 
               <a
                 href="#investment-calculator"
-                className={`inline-flex items-center gap-2 px-5 sm:px-6 py-3.5 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 ${
+                className={`inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 sm:py-4 rounded-full font-bold text-sm transition-all duration-300 transform active:scale-95 ${
                   isDark
                     ? 'bg-slate-900/80 border border-slate-700 text-slate-200 hover:border-gold-500/50 hover:bg-slate-800'
                     : 'bg-white border border-slate-300 text-slate-900 hover:bg-slate-50 shadow-sm'

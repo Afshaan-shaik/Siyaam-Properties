@@ -66,13 +66,13 @@ export default function PropertyShowcase() {
             Every property is rigorously verified for clear ownership titles, town-planning approvals, and superior capital appreciation potential.
           </p>
 
-          {/* Filter Pills */}
-          <div className="flex flex-wrap justify-center gap-2 pt-4">
+          {/* Filter Pills (Swipeable on Mobile like Native Real Estate Apps) */}
+          <div className="flex overflow-x-auto pb-2 sm:pb-0 scrollbar-none sm:flex-wrap justify-start sm:justify-center gap-2 pt-4 w-full">
             {filterTabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveFilter(tab.id)}
-                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
+                className={`px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 whitespace-nowrap flex-shrink-0 active:scale-95 ${
                   activeFilter === tab.id
                     ? isDark
                       ? 'bg-gradient-to-r from-gold-400 to-amber-500 text-obsidian-950 font-bold shadow-lg shadow-gold-500/20'

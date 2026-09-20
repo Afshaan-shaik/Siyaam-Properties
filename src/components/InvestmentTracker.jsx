@@ -125,13 +125,13 @@ export default function InvestmentTracker() {
             Simulate your capital gains, passive rental cashflows, and multi-year appreciation for Hubballi NA plots & luxury homes vs. tax-free Dubai real estate.
           </p>
 
-          {/* Market Segment Toggle */}
-          <div className={`inline-flex p-1.5 rounded-full border shadow-inner mt-2 ${
+          {/* Market Preset Selector */}
+          <div className={`inline-flex flex-col sm:flex-row p-1.5 rounded-2xl sm:rounded-full border transition-colors w-full sm:w-auto ${
             isDark ? 'bg-slate-900 border-white/10' : 'bg-slate-100 border-slate-300'
           }`}>
             <button
               onClick={() => handleMarketChange('hubli')}
-              className={`px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 ${
+              className={`px-5 py-2.5 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all duration-300 flex items-center justify-center gap-2 ${
                 marketMode === 'hubli'
                   ? isDark ? 'bg-gold-400 text-obsidian-950 shadow-lg' : 'bg-black text-white shadow-lg'
                   : isDark ? 'text-slate-400 hover:text-white' : 'text-slate-600 hover:text-black'
@@ -142,7 +142,7 @@ export default function InvestmentTracker() {
             </button>
             <button
               onClick={() => handleMarketChange('dubai')}
-              className={`px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 ${
+              className={`px-5 py-2.5 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all duration-300 flex items-center justify-center gap-2 ${
                 marketMode === 'dubai'
                   ? 'bg-sky-500 text-white shadow-lg'
                   : isDark ? 'text-slate-400 hover:text-white' : 'text-slate-600 hover:text-black'

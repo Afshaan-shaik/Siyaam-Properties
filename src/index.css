@@ -5,6 +5,11 @@
 @layer base {
   html {
     color-scheme: dark;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  html.light {
+    color-scheme: light;
   }
   body {
     background-color: #04060a;
@@ -12,6 +17,17 @@
       radial-gradient(at 15% 15%, rgba(212, 175, 55, 0.05) 0px, transparent 50%),
       radial-gradient(at 85% 85%, rgba(56, 189, 248, 0.04) 0px, transparent 50%);
     background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+  }
+  html.light body {
+    background-color: #ffffff;
+    background-image: none;
+  }
+  /* Prevent iOS automatic zoom on focus while maintaining touch accessibility */
+  @media (max-width: 768px) {
+    input, select, textarea {
+      font-size: 16px !important;
+    }
   }
 }
 
